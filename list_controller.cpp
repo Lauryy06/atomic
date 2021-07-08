@@ -106,7 +106,7 @@ void ListController::tableViewDidChangeSelection(SelectableTableView * t, int pr
 }
 
 int ListController::reusableCellCount(int type) {
-  assert(type == 0);
+  assert(type >= 0 && type < 3);
   return k_numberOfRow;
 }
 
@@ -123,8 +123,14 @@ int ListController::typeAtLocation(int i, int j) {
 void ListController::setAtom(AtomDef atom) {
   m_atom = atom; 
   m_innerView.setAtom(atom); 
+}
+
+void ListController::unhighlightTopCells() {
   m_cellsWithExpression[0].setHighlighted(false); 
-  m_cellsWithExpression[1].setHighlighted(false); // FIXME This fix is ugly (just supposing that there's the 2 first cellsWithExpression that can be seen when scrolling on 1st cell)
+  m_cellsWithExpression[1].setHighlighted(false);
+  // FIXME This fix is ugly (just supposing that there's the 2 first cellsWithExpression that can be seen when scrolling on 1st cell)
+  // This assert is supposed to be triggered if the view is modified and this fix is not working anymore...
+  assert(rowHeight(0) + rowHeight(1) + rowHeight(2) + rowHeight(3) >= m_innerView.view()->bounds().height());
 }
 
 void ListController::willDisplayCellForIndex(HighlightCell * cell, int index) {
