@@ -22,6 +22,7 @@ public:
   bool handleEvent(Ion::Events::Event event) override;
 
   void setAtom(AtomDef atom);
+  void unhighlightTopCells();
 
   void tableViewDidChangeSelection(SelectableTableView * t, int previousSelectedCellX, int previousSelectedCellY, bool withinTemporarySelection) override;
 
