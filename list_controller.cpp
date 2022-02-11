@@ -25,7 +25,7 @@ void ListController::InnerView::didBecomeFirstResponder() {
 }
 
 ListController::ListController(Responder * parentResponder) :
-  StackViewController(parentResponder, &m_innerView, Palette::PurpleBright, Palette::PurpleDark),
+  StackViewController(parentResponder, &m_innerView, *Palette::PurpleBright, *Palette::PurpleDark),
   m_innerView(this),
   m_parent(parentResponder)
 {

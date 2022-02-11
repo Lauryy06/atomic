@@ -12,7 +12,7 @@ atomInfo::atomInfo() :
 }
 
 void atomInfo::drawRect(KDContext * ctx, KDRect rect) const {
-  ctx->fillRect(rect, Palette::BackgroundApps);
+  ctx->fillRect(rect, *Palette::BackgroundApps);
   char protons[4];
   char nucleons[4];
   char mass[12];
@@ -20,13 +20,13 @@ void atomInfo::drawRect(KDContext * ctx, KDRect rect) const {
   Poincare::Integer(m_atom.neutrons + m_atom.num).serialize(nucleons, 4);
   Poincare::Number::FloatNumber(m_atom.mass).serialize(mass, 12, Poincare::Preferences::PrintFloatMode::Decimal, 12);
   KDPoint coordonates(bounds().topLeft());
-  ctx->drawString(nucleons, coordonates, KDFont::SmallFont, Palette::AtomText, Palette::BackgroundApps);
+  ctx->drawString(nucleons, coordonates, KDFont::SmallFont, *Palette::AtomText, *Palette::BackgroundApps);
   coordonates = KDPoint(coordonates.x(), coordonates.y() + 14);
-  ctx->drawString(protons, coordonates, KDFont::SmallFont, Palette::AtomText, Palette::BackgroundApps);
+  ctx->drawString(protons, coordonates, KDFont::SmallFont, *Palette::AtomText, *Palette::BackgroundApps);
   coordonates = KDPoint(bounds().left() + 23, bounds().top() + 6);
-  ctx->drawString(m_atom.symbol, coordonates, KDFont::LargeFont, Palette::AtomText, Palette::BackgroundApps);
+  ctx->drawString(m_atom.symbol, coordonates, KDFont::LargeFont, *Palette::AtomText, *Palette::BackgroundApps);
   coordonates = KDPoint(bounds().left() + 60, bounds().top() + 13);
-  ctx->drawString(mass, coordonates, KDFont::SmallFont, Palette::AtomText, Palette::BackgroundApps);
+  ctx->drawString(mass, coordonates, KDFont::SmallFont, *Palette::AtomText, *Palette::BackgroundApps);
 }
 
 int atomInfo::numberOfSubviews() const {

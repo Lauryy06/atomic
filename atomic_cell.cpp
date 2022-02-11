@@ -11,7 +11,7 @@ AtomicCell::AtomicCell() :
 }
 
 KDColor AtomicCell::colorForType(AtomType type) const {
-  return Palette::AtomColor[type];
+  return *Palette::AtomColor[type];
 }
 
 void AtomicCell::drawRect(KDContext * ctx, KDRect rect) const {
@@ -19,15 +19,15 @@ void AtomicCell::drawRect(KDContext * ctx, KDRect rect) const {
     KDColor color = colorForType(m_atom.type);
     ctx->fillRect(rect, color);
     KDPoint textPosition(bounds().topLeft().x() + 2, bounds().topLeft().y() + 2);
-    ctx->drawString(m_atom.symbol, textPosition, KDFont::SmallFont, Palette::PrimaryText, color);
+    ctx->drawString(m_atom.symbol, textPosition, KDFont::SmallFont, *Palette::PrimaryText, color);
     if(isHighlighted()) {
-      KDColor highlighColor = KDColor::blend(color, Palette::AtomHighlight, 0x7F);
+      KDColor highlighColor = KDColor::blend(color, *Palette::AtomHighlight, 0x7F);
       ctx->strokeRect(bounds(), highlighColor);
       KDRect rect2(bounds().topLeft().x() + 1, bounds().topLeft().y() + 1, bounds().width() - 2, bounds().height() - 2);
       ctx->strokeRect(rect2, highlighColor);
     }
   } else {
-    ctx->fillRect(rect, Palette::BackgroundApps);
+    ctx->fillRect(rect, *Palette::BackgroundApps);
   }
 }
 

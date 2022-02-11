@@ -14,7 +14,7 @@ TableController::ContentView::ContentView(TableController * controller, Selectab
 {
   m_selectableTableView.setVerticalCellOverlap(0);
   m_selectableTableView.setMargins(k_sideMargin, k_sideMargin, k_sideMargin, k_sideMargin);
-  m_selectableTableView.setBackgroundColor(Palette::BackgroundApps);
+  m_selectableTableView.setBackgroundColor(*Palette::BackgroundApps);
 }
 
 SelectableTableView * TableController::ContentView::selectableTableView() {
@@ -22,7 +22,7 @@ SelectableTableView * TableController::ContentView::selectableTableView() {
 }
 
 void TableController::ContentView::drawRect(KDContext * ctx, KDRect rect) const {
-  ctx->fillRect(bounds(), Palette::BackgroundApps);
+  ctx->fillRect(bounds(), *Palette::BackgroundApps);
 }
 
 int TableController::ContentView::numberOfSubviews() const {
