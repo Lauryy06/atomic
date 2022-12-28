@@ -46,10 +46,10 @@ View * TableController::ContentView::subviewAtIndex(int index) {
 }
 
 void TableController::ContentView::layoutSubviews(bool force) {
-  m_selectableTableView.setFrame(bounds(), force);
-  m_ok.setFrame(KDRect(295,200, m_ok.minimalSizeForOptimalDisplay()), force);
-  m_info.setFrame(KDRect(KDPoint(48,15),m_info.minimalSizeForOptimalDisplay()), force);
-  m_lines.setFrame(KDRect(KDPoint(48, 99), m_lines.minimalSizeForOptimalDisplay()), force);
+  m_selectableTableView.setFrame(KDRect(bounds().top(), bounds().left() + 20 , bounds().width(), bounds().height() - 20), force);
+  m_ok.setFrame(KDRect(295, 200, m_ok.minimalSizeForOptimalDisplay()), force);
+  m_info.setFrame(KDRect(KDPoint(48, 15),m_info.minimalSizeForOptimalDisplay()), force);
+  m_lines.setFrame(KDRect(KDPoint(40, 99 + 20), m_lines.minimalSizeForOptimalDisplay()), force);
 }
 
 TableController::TableController(Responder * parentResponder, SelectableTableViewDataSource * selectionDataSource) :
@@ -150,8 +150,8 @@ int TableController::reusableCellCount() const {
 
 void TableController::willDisplayCellAtLocation(HighlightCell * cell, int i, int j) {
   AtomicCell* c = static_cast<AtomicCell*>(cell);
-  for(AtomDef atom : atomsdefs) {
-    if(atom.x == i && atom.y == j) {
+  for (AtomDef atom : atomsdefs) {
+    if (atom.x == i && atom.y == j) {
       c->setVisible(true);
       c->setAtom(atom);
       return;
