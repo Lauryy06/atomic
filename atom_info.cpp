@@ -4,6 +4,7 @@
 #include <poincare/integer.h>
 #include <poincare/number.h>
 #include <escher/palette.h>
+#include <algorithm>
 
 namespace Atomic {
 
