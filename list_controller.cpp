@@ -326,7 +326,7 @@ const ListController::Electronical::exceptionStruct ListController::Electronical
 
   {  57,  true,   2, false, -1,  true,  1, false, -1},
   {  58,  true,   2,  true,  1,  true,  1, false, -1},
-  {  78,  true,   1,  true, 14,  true, 19, false, -1},
+  {  78,  true,   1,  true, 14,  true,  9, false, -1},
 
   {  89,  true,   2, false, -1,  true,  1, false, -1},
   {  90,  true,   2, false, -1,  true,  2, false, -1},
