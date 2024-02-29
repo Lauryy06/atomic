@@ -313,7 +313,7 @@ const ListController::Electronical::rowsSubLayers ListController::Electronical::
   { true,  7,  true,   5,   true,  6,   true,  7 }, // 6s² 4f¹⁴ 5d¹⁰ 6p⁶
 };
 
-const ListController::Electronical::exceptionStruct ListController::Electronical::exceptions[18] = {
+const ListController::Electronical::exceptionStruct ListController::Electronical::exceptions[20] = {
   {  24,  true,   1, false, -1,  true,  5, false, -1},
   {  29,  true,   1, false, -1,  true, 10, false, -1},
 
