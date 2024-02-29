@@ -67,7 +67,7 @@ private:
       int pContent;
     };
     const static rowsSubLayers rows[];
-    const static exceptionStruct exceptions[18];
+    const static exceptionStruct exceptions[20];
     
   };
 
