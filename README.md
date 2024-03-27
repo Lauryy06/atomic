@@ -3,4 +3,5 @@ An improved version of [nw-atom](https://github.com/M4xi1m3/nw-atom), but escher
 
 This is a Mendeleiev table for Epsilon ([numworks'](https://numworks.com) firmware). This is a WIP, and not official :p
 
-Corrections of typos within original atomic apps. Exceptions in the d-block and f-block have been added.
+Corrections of typos within original atomic app (https://github.com/M4xi1m3/nw-atom). 
+Exceptions in the d-block and f-block have been added.
