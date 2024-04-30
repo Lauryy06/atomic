@@ -313,7 +313,7 @@ const ListController::Electronical::rowsSubLayers ListController::Electronical::
   { true,  7,  true,   5,   true,  6,   true,  7 }, // 6s² 4f¹⁴ 5d¹⁰ 6p⁶
 };
 
-const ListController::Electronical::exceptionStruct ListController::Electronical::exceptions[18] = {
+const ListController::Electronical::exceptionStruct ListController::Electronical::exceptions[20] = {
   {  24,  true,   1, false, -1,  true,  5, false, -1},
   {  29,  true,   1, false, -1,  true, 10, false, -1},
 
@@ -321,12 +321,14 @@ const ListController::Electronical::exceptionStruct ListController::Electronical
   {  42,  true,   1, false, -1,  true,  5, false, -1},
   {  44,  true,   1, false, -1,  true,  7, false, -1},
   {  45,  true,   1, false, -1,  true,  8, false, -1},
-  {  46, false,  -1, false, -1, false, -1, false, -1},
+  {  46, false,  -1, false, -1,  true, 10, false, -1},
   {  47,  true,   1, false, -1,  true, 10, false, -1},
 
   {  57,  true,   2, false, -1,  true,  1, false, -1},
   {  58,  true,   2,  true,  1,  true,  1, false, -1},
-  {  78,  true,   1,  true, 14,  true, 19, false, -1},
+  {  64,  true,   2,  true,  7,  true,  1, false, -1},
+  {  78,  true,   1,  true, 14,  true,  9, false, -1},
+  {  79,  true,   1,  true, 14,  true, 10, false, -1},
 
   {  89,  true,   2, false, -1,  true,  1, false, -1},
   {  90,  true,   2, false, -1,  true,  2, false, -1},
